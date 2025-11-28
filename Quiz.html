@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Inscription</title>
+</head>
+<body>
+  <!-- Formulaire d'inscription -->
+  <form>
+    <h1>Quiz du cours ICD2O/ICS3C/3U.</h1>
+    <br><br>
+    <!-- radio button pour l'année d'étude secondaire -->
+    <label for="radLang">Quel language de code n'étais pas appris?</label>
+    <input type="radio" name="language" value="Java">Java
+    <input type="radio" name="language" value="Python">Python
+    <input type="radio" name="language" value="CSS">CSS
+    <input type="radio" name="language" value="HTML">HTML
+
+    <br><br>
+    <!-- select pour le nom de l'école -->
+    <label for="selCamel">Le quel est camelcase?</label>
+    <select id="selCamel">
+      <option value="Faux1">Nombretotal</option>
+      <option value="Faux2">NombreTotal</option>
+      <option value="Faux3">Nombretotal</option>
+      <option value="Correct">nombreTotal</option>
+    </select>
+    <br><br>
+
+
+    <!-- Checkbox pour les langues que tu connais -->
+    <label for="chkQuestions">Coche les bonne réponses</label><br>
+    <input type="checkbox" id="chkQuestions" name="questions" value="Faux">Else est toujours nécéssaire quand if est utilisé<br>
+    <input type="checkbox" id="chkQuestions" name="questions" value="Valid">For peut être utiliser dans un n'autre for<br>
+    <input type="checkbox" id="chkQuestions" name="questions" value="Faux">Le boucle while et for sont TOUJOURS des boucles défini<br>
+    <input type="checkbox" id="chkQuestions" name="questions" value="Valid">Les images local sont plus sécuritaire au long terme<br>
+
+
+    <br>
+
+
+    <!-- bouton pour soumettre le formulaire -->
+    <input type="button" id="btnSoumet" onclick="confirmeInscription()"  value="Soumettre le quiz">
+    <!-- Création d'une section pour l'affichage des résultats -->
+    <div id="divAffiche">
+    </div>
+    <script>
+        function confirmeInscription() {
+            console.log("Allo")
+            //Chercher les données dans le formulaire
+            var language = document.getElementsByName("language");
+            var camelCase = document.getElementById("selCamel").value;
+            var questions = document.getElementsByName("questions");
+            
+
+            var affiche = document.getElementById("divAffiche");
+            let resultat = ""
+            
+            if (language[1].checked) {
+               resultat +="<br>Q1 : Correct"
+            }
+            else {resultat +="<br>Q1 : Mauvais réponse"}
+
+            if (camelCase== "Correct") {
+                resultat +="<br>Q2 : Correct"
+            }
+            else {resultat +="<br>Q2 : Mauvais réponse"}
+            
+            if (!questions[0].checked && questions[1].checked && !questions[2].checked && questions[3].checked) {
+               resultat +="<br> Q3 : Correct"
+        }
+        else {resultat +="<br> Q3 : Mauvais réponse"}
+        affiche.innerHTML = resultat
+        
+    }
+    </script>
+  </form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Inscription</title>
+</head>
+<body>
+  <!-- Formulaire d'inscription -->
+  <form>
+    <h1>Formulaire d'inscription</h1>
+    <!-- textbox pour le nom de l'élève -->
+    <label for="txtN1">Nombre 1:</label>
+    <input type="text" id="txtN1">
+    <label for="txtN2"><br><br>Nombre 2:</label>
+    <input type="text" id="txtN2">
+    <br><br>
+
+
+    
+
+
+    <!-- bouton pour soumettre le formulaire -->
+    <input type="button" id="btnSoumet" onclick="confirmeInscription()"  value="Démaré les calcules"> <br><br>
+    <!-- Création d'une section pour l'affichage des résultats -->
+    <div id="divAffiche">
+    </div>
+    <script>
+        function confirmeInscription() {
+            //Chercher les données dans le formulaire
+            var n1 = parseInt(document.getElementById("txtN1").value);
+            var n2 = parseInt(document.getElementById("txtN2").value);
+            var affiche = document.getElementById("divAffiche");
+            var modulo = n1 % n2
+            var addition = n1 + n2
+            var soustraction = n1 - n2
+            var multiplication = n1 * n2
+            var division = n1 / n2
+            var exposant = n1**n2
+            var moduloETmessage ='Le restant de tes deux nombres sont: ' + modulo
+            var additionETmessage ='Le addition de tes deux nombres égale: ' + addition
+            var soustractionETmessage ='Le soustration de tes deux nombres égale: ' + soustraction
+            var multiplicationETmessage ='Le multiplication de tes deux nombres égale: ' + multiplication
+            var divisionETmessage ='Le division de tes deux nombres égale: ' + division
+            var exposantETmessage ='Si on met ton nombre 1 comme base et nombre 2 comme exposant ca égale: ' + exposant
+            affiche.innerHTML = moduloETmessage + "<br>" + additionETmessage + "<br>" + soustractionETmessage + "<br>" + multiplicationETmessage + "<br>" + divisionETmessage + "<br>" + exposantETmessage
+              }
+              
+    </script>
+  </form>
+</body>
+</html>

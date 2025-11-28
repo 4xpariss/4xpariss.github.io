@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Inscription</title>
+</head>
+<body>
+  <!-- Formulaire d'inscription -->
+  <form>
+    <h1>Formulaire d'inscription</h1>
+    <!-- textbox pour le nom de l'élève -->
+    <label for="txtN1">Nom:</label>
+    <input type="text" id="txtN1">
+    <label for="txtN2"><br><br>Nom de millieux:</label>
+    <input type="text" id="txtN2">
+    <label for="txtN3"><br><br>Pronom:</label>
+    <input type="text" id="txtN3">
+    <br><br>
+    
+
+
+    
+
+
+    <!-- bouton pour soumettre le formulaire -->
+    <input type="button" id="btnSoumet" onclick="confirmeInscription()"  value="Click pour nom"> <br><br>
+    <!-- Création d'une section pour l'affichage des résultats -->
+    <div id="divAffiche">
+    </div>
+    <script>
+        function confirmeInscription() {
+            //Chercher les données dans le formulaire
+            var n1 = document.getElementById("txtN1").value;
+            var affiche = document.getElementById("divAffiche");
+            var n1Message = "Ton nom est : " + n1
+            affiche.innerHTML = n1Message
+            
+              }
+              
+    </script>
+    <input type="button" id="btnSoumet" onclick="confirmeInscription2()"  value="Click pour nom de millieux"> <br><br>
+    <!-- Création d'une section pour l'affichage des résultats -->
+    <div id="divAffiche2">
+    </div>
+    <script>
+        function confirmeInscription2() {
+            //Chercher les données dans le formulaire
+            var n2 = document.getElementById("txtN2").value;
+            var affiche = document.getElementById("divAffiche2");
+           var n2Message = "Ton nom de millieux est : " + n2
+            affiche.innerHTML =  n2Message
+            
+              }
+              
+    </script>
+    <input type="button" id="btnSoumet" onclick="confirmeInscription3()"  value="Click pour pronom"> <br><br>
+    <!-- Création d'une section pour l'affichage des résultats -->
+    <div id="divAffiche3">
+    </div>
+    <script>
+        function confirmeInscription3() {
+            //Chercher les données dans le formulaire
+            var n3 = document.getElementById("txtN3").value;
+            var affiche = document.getElementById("divAffiche3");
+            var n3Message = "Ton pronom est : " + n3
+            affiche.innerHTML = n3Message
+            
+              }
+              
+    </script>
+  </form>
+</body>
+</html>

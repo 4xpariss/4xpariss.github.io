@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Inscription</title>
+</head>
+<body>
+  <!-- Formulaire d'inscription -->
+  <form>
+    <h1>Formulaire d'inscription</h1>
+    <!-- textbox pour le nom de l'élève -->
+    <label for="txtNom">Nom:</label>
+    <input type="text" id="txtNom">
+    <br><br>
+    <!-- radio button pour l'année d'étude secondaire -->
+    <label for="radGrade">Année d'étude:</label>
+    <input type="radio" name="annee" value="9e">9e
+    <input type="radio" name="annee" value="10e">10e
+    <input type="radio" name="annee" value="11e" checked>11e
+    <input type="radio" name="annee" value="12e">12e
+    <br><br>
+    <!-- select pour le nom de l'école -->
+    <label for="selEcole">École:</label>
+    <select id="selEcole">
+      <option value="Ésc Franco-Ouest">Ésc Franco-Ouest</option>
+      <option value="Ésc Paul Desmarais">Ésc Paul-Desmarais</option>
+      <option value="Ésc Pierre Savard">Ésc Pierre-Savard</option>
+    </select>
+    <br><br>
+
+
+    <!-- Checkbox pour les langues que tu connais -->
+    <label for="chkLangues">Langues parlées:</label><br>
+    <input type="checkbox" id="chkLangues" name="langues" value="Bonjour">Français<br>
+    <input type="checkbox" id="chkLangues" name="langues" value="Hi there">Anglais<br>
+    <input type="checkbox" id="chkLangues" name="langues" value="Holà">Espagnol<br>
+    <input type="checkbox" id="chkLangues" name="langues" value="Ciao">Italien<br>
+
+
+    <br>
+
+
+    <!-- bouton pour soumettre le formulaire -->
+    <input type="button" id="btnSoumet" onclick="confirmeInscription()"  value="Soumettre le formulaire">
+    <!-- Création d'une section pour l'affichage des résultats -->
+    <div id="divAffiche">
+    </div>
+    <script>
+        function confirmeInscription() {
+            //Chercher les données dans le formulaire
+            var nom = document.getElementById("txtNom").value;
+            var ecole = document.getElementById("selEcole").value;
+            var affiche = document.getElementById("divAffiche");
+            //Pour déterminer lequel des radio buttons est coché
+            var radiosAnnee = document.getElementsByName("annee");
+            //Variable pour stocker l'année choisie
+            var annee = "";
+            for (var i = 0; i < radiosAnnee.length; i++) {
+              if (radiosAnnee[i].checked) {
+                  annee = radiosAnnee[i].value;
+              }
+            }
+            //Pour déterminer lesquels des checkbox sont cochés
+            var checkLangues = document.getElementsByName("langues");
+            var messageBonjour = "";
+            for (var i=0; i < checkLangues.length; i++) {
+              if (checkLangues[i].checked) {
+                messageBonjour += " " + checkLangues[i].value;
+              }
+            }
+          
+            //Construire le message à afficher
+            var message = "<br><br>Chère " + nom + ":  " + messageBonjour
+                             + " <br><br>" + "Tu es maintenant inscrit en "
+                             + annee + " à " + ecole + ".";
+            //Afficher le message sur la page web
+            affiche.innerHTML = message;
+        }
+    </script>
+  </form>
+</body>
+</html>
