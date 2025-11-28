@@ -52,9 +52,19 @@
     </div>
     <script>
         function confirmeInscription() {
-        
-        let phrase = J\’adore l\’été!  Chaque jour, quand je suis en vacances, je me réveille, je mets mes  je me rend à la cuisine et je mange pour déjeuner.  Ensuite, mon activité préféré est de avec mon ami À 14h je dîne.  Je mange des   Durant l\’après-midi, j\’aime me rendre au parc et de    En soirée, je mange toujours du  pour le souper.  Finalement, je me couche et je rêve de   Quel été !
-           return
+        var Vêtements = document.getElementById("txtVêtements").value;
+        var Nourriture = document.getElementById("txtNourriture").value;
+        var Action = document.getElementById("txtAction").value;
+        var Ami = document.getElementById("txtAmi").value;
+        var Nourriture2 = document.getElementById("txtNourriture2").value;
+        var Adjectif = document.getElementById("txtAdjectif").value;
+        var Action2 = document.getElementById("txtAction2").value;
+        var Advebre = document.getElementById("txtAdvebre").value;
+        var Nourriture3 = document.getElementById("txtNourriture3").value;
+        var Nom = document.getElementById("txtNom").value;
+        var Adjectif2 = document.getElementById("txtAdjectif2").value;
+        let Phrase = "J’adore l’été!  Chaque jour, quand je suis en vacances, je me réveille, je mets mes " + Vêtements + " je me rend à la cuisine et je mange " + Nourriture + " pour déjeuner.  Ensuite, mon activité préféré est de " + Action +  " avec mon ami " + Ami + " À 14h je dîne. Je mange des " + Nourriture2 + Adjectif + "Durant l’après-midi, j’aime me rendre au parc et de " + Action2 + Advebre +  " En soirée, je mange toujours du " + Nourriture3 + " pour le souper.  Finalement, je me couche et je rêve de " + Nom + " Quel été " + Ajectif + "!"
+           affiche.innerHTML = Phrase
         }
     </script>
   </form>
